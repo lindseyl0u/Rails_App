@@ -1,3 +1,66 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Typography
+
+.green-font {
+	color: #42f4c5;
+}
+
+.fun-font {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+footer {
+	color: #fff;
+}
+// Layouts
+
+.navbar {
+	background-color: #ffb7e3;
+	padding: 10px;
+}
+
+.navbar
+  li {
+  padding: 0 10px;
+  }
+
+.navbar li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar li a:hover {
+	color: #42f4c5;
+}
+
+body {
+	
+	background-color: #fcfcfc;
+	padding-top: 125px;
+}
+
+.logo {
+	font-size: 2em;
+	padding: 10 15;
+	position: relative;
+	color: #fff;
+}
+
+.logo:hover {
+	text-decoration: none;
+	color: #42f4c5;
+}
+
+footer {
+	width: 100%;
+}
+
+
+// Index 
+
+.totoro {
+	max-width: 300px;
+}

@@ -49,6 +49,7 @@ body {
 	padding: 10 15;
 	position: relative;
 	color: #fff;
+
 }
 
 .logo:hover {
@@ -65,4 +66,18 @@ footer {
 
 .totoro {
 	max-width: 300px;
+}
+
+.kandi {
+	text-decoration: none;
+	color: #fff;
+	background-color: #ffb7e3;
+	border-radius: 10px;
+	padding: 7px;
+}
+
+.kandi:hover {
+	text-decoration: none;
+	color: #42f4c5;
+	background-color: #fcfcfc;
 }

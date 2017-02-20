@@ -20,7 +20,7 @@
 
       <div class="container-fluid">
          <div class="navbar-brand">
-          <a class="logo fun-font"href="#">Kawaii Kandi</a>
+          <a> <%= link_to "Kawaii Kandi", root_path, class: "logo fun-font" %> </a>
         </div>
 
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,9 +32,10 @@
 
         <div class= "navbar-collapse collapse">
           <ul class="nav nav-pills navbar-right">
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
+            <li> <%= link_to "Home", static_pages_index_path %> </li>
+            <li> <%= link_to "About", static_pages_about_path %> </li>
+            <li> <%= link_to "Contact", static_pages_contact_path %> </li>
+            <li> <%= link_to "Products", products_path %> </li>
           </ul>
         </div>
       </div>

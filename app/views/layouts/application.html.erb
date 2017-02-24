@@ -36,6 +36,13 @@
             <li> <%= link_to "About", static_pages_about_path %> </li>
             <li> <%= link_to "Contact", static_pages_contact_path %> </li>
             <li> <%= link_to "Products", products_path %> </li>
+            <li>
+            <li>
+              <%= form_tag("/products", method: "get") do %>
+                <%= text_field_tag(:q, nil, class:'form-control') %>
+                <%= submit_tag("Search", class:'btn btn-default') %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>

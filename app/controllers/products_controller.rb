@@ -61,6 +61,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  # CALL PARAMS
+  def index
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+      # return our filtered list here
+    else
+      @products = Product.all
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

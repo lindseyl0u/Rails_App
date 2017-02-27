@@ -4,7 +4,19 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
+    if params[:q]
+      search_term = params[:q]
+      if Rails.env == "development"
+        @products = Product.where("name LIKE ?", "%#{search_term}%")
+      else
+        @products = Product.where("name ilike ?", "%#{search_term}%")
+      end
+
+    #return our filtered list here
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1
@@ -58,17 +70,6 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
-    end
-  end
-
-  # CALL PARAMS
-  def index
-    if params[:q]
-      search_term = params[:q]
-      @products = Product.search(search_term)
-      # return our filtered list here
-    else
-      @products = Product.all
     end
   end
 

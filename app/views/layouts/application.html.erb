@@ -16,6 +16,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %> </p>
+    <p class="alert"><%= alert %> </p>
+
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
       <div class="container-fluid">
@@ -42,6 +45,15 @@
                 <%= text_field_tag(:q, nil, class:'form-control') %>
                 <%= submit_tag("Search", class:'btn btn-default') %>
               <% end %>
+            </li>
+          </ul>
+          <ul>
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
             </li>
           </ul>
         </div>

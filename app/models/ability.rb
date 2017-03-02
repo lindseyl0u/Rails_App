@@ -3,13 +3,14 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-  end
-  
-  if user.admin?
-  	can :manage, :all
-  else
-  	can :manage, User, id: user.id
-  	can [:create, :read], Comment
-  	can :read, Product
+    can :manage, User, id: user.id
+    can :create, Comment
+    can :read, Comment
+    can :read, Product
+    if user
+      can :destroy, Comment
+      can :manage, Product
+    end
+    #can :manage, Order, id: user.order.id
   end
 end

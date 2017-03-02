@@ -13,4 +13,3 @@ class Ability
   	can :read, Product
   end
 end
-end

@@ -39,26 +39,26 @@
         </button>
 
         <div class= "navbar-collapse collapse">
+          
+
           <ul class="nav nav-pills navbar-right">
             <li> <%= link_to "Home", static_pages_index_path %> </li>
             <li> <%= link_to "About", static_pages_about_path %> </li>
-            <li> <%= link_to "Contact", static_pages_contact_path %> </li>
-            <li> <%= link_to "Products", products_path %> </li>
-            <li>
-            <li>
-              <%= form_tag("/products", method: "get") do %>
-                <%= text_field_tag(:q, nil, class:'form-control') %>
-                <%= submit_tag("Search", class:'btn btn-default') %>
-              <% end %>
+            <li> <%= link_to "Contact", static_pages_contact_path %></li>
+            <li> <%= link_to "Products", products_path %> 
             </li>
-          </ul>
-          <ul>
-            <li>
+            <li class= "login-button">
             <% if user_signed_in? %>
               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
             <% else %>
               <%= link_to('Login', new_user_session_path) %>
             <% end %>
+            </li>
+            <li>
+              <%= form_tag("/products", method: "get") do %>
+                <%= text_field_tag(:q, nil, class:'form-control') %>
+                <%= submit_tag("Search", class:'btn btn-default') %>
+              <% end %>
             </li>
           </ul>
         </div>

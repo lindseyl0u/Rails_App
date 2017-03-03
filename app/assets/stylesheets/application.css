@@ -14,3 +14,11 @@
  *= require_self
  */
 
+.login-button {
+	list-style: none;
+	padding-left: px;
+}
+
+.button-space {
+	margin: 10px 0;
+}

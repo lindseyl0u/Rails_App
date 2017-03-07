@@ -68,3 +68,6 @@ gem 'cancancan', '~> 1.10'
 
 #page break function
 gem 'will_paginate', '~> 3.1.0'
+
+#functional test writing
+gem 'rails-controller-testing'

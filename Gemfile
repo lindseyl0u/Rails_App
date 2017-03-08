@@ -73,4 +73,7 @@ gem 'will_paginate', '~> 3.1.0'
 #functional test writing
 gem 'rails-controller-testing'
 
+#accept payments with stripe
+
+gem 'stripe'
 

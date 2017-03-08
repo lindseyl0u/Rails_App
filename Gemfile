@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   #test function
   gem 'rspec-rails', '~>3.5'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do
@@ -71,3 +72,5 @@ gem 'will_paginate', '~> 3.1.0'
 
 #functional test writing
 gem 'rails-controller-testing'
+
+

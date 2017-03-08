@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
       else
         @products = Product.where("name ilike ?", "%#{search_term}%")
       end
-
     #return our filtered list here
     else
       @products = Product.all

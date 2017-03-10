@@ -1,12 +1,16 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
+  logger.debug
+
   def create
-  	@product = params[:product_id]
+  	token = params[:stripeToken]
+  	@product = Product.find(params[:product_id])
   	@user = current_user
-    token = params[:stripeToken]
     # Create the charge on Stripe's servers - this will charge the user's card
+    
     begin
       charge = Stripe::Charge.create(
-        :amount => "<%= @product.price * 100 %>",
+        :amount => (@product.price * 100).to_i, #amount in cents, again
         :currency => "usd",
         :source => token,
         :description => params[:stripeEmail]
@@ -25,6 +29,8 @@ class PaymentsController < ApplicationController
       body = e.json_body
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+    end
+  redirect_to product_path(@product) #redirects to product page
   end
-  redirect_to product_path(@product)
 end
+

@@ -74,6 +74,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'rails-controller-testing'
 
 #accept payments with stripe
-
 gem 'stripe'
+
+#security gem
+gem 'brakeman', :require => false
 

@@ -1,44 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-6 col-xs-12">
-<%= image_tag(@product.image_url, class: "thumbnail img-responsive") %>  
+
+<%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: @product.image_url) %>  
 </div>
 
 <div class="col-md-3 col-xs-12 product-description">
     
-    <h2 class="fun-font">
-      <%= @product.name %>
-    </h2>
-    <h5>
-      <%= @product.description %>
-    </h5>
+  <h2 class="fun-font">
+  <%= @product.name %>
+  </h2>
+
+  <h5>
+  <%= @product.description %>
+  </h5>
+
   <p>
-    <strong>Flavour:</strong>
-    <%= @product.flavour %>
+  <strong>Flavour:</strong>
+  <%= @product.flavour %>
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= @product.price %>
+  <strong>Price:</strong>
+  <%= @product.price %>
   </p>
+
   <p><strong>Average Rating:</strong><div class="rated" data-score="<%= @product.average_rating %>"></div>
   </p>
+
   <%= form_tag "/payments/create" do %>
-    <%= render partial: "shared/stripe_checkout_button" %>
-    <%= hidden_field_tag(:product_id, @product.id) %>
+  <%= render partial: "shared/stripe_checkout_button" %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
   <% end %>
 
   <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-default btn-sm button-space' %> |
   <%= link_to 'Back', products_path, class:'btn btn-default btn-sm button-space' %>
 </div>
+
 <div class="col-md-3">
-  <%= render partial: "new_comment" %>
+  <p><%= render partial: "new_comment" %></p>
 </div>
 
 <div class= "col-md-12 review-section">
   <h1 class= "fun-font">Reviews</h1>
-    <p><%= render partial: "comments" %></p>
-    <p> <%= will_paginate @comments %></p>
+  <p><%= render partial: "comments" %></p>
+  <p> <%= will_paginate @comments %></p>
 </div>
 
 

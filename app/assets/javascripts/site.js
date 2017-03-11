@@ -1,7 +1,4 @@
-$(document).on('turbolinks:load', function(){
-	 //zoom in on products
-  $('.img-zoom').elevateZoom();
-  
+var refreshRating = function() {  
 	//star rating system
 	$('.rating').raty( { path: '/assets/images', scoreName: 'comment[rating]' });
 	$('.rated').raty({ path: '/assets/images',
@@ -10,4 +7,10 @@ $(document).on('turbolinks:load', function(){
 	  return $(this).attr('data-score');
 	}
   });
+};
+
+$(document).on('turbolinks:load', function(){
+	refreshRating();
+	 //zoom in on products
+  $('.img-zoom').elevateZoom();
 });

@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-md-3 col-xs-12 product-description">
-    
+  <% cache @product do %>  
   <h2 class="fun-font">
   <%= @product.name %>
   </h2>
@@ -27,6 +27,7 @@
 
   <p><strong>Average Rating:</strong><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
   </p>
+  <% end %>
 
   <%= form_tag "/payments/create" do %>
   <%= render partial: "shared/stripe_checkout_button" %>

@@ -44,6 +44,7 @@
 
 <div class= "col-md-12 review-section">
   <h1 class= "fun-font">Reviews</h1>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
   <p><%= render partial: "comments" %></p>
   <p> <%= will_paginate @comments %></p>
 </div>

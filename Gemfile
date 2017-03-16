@@ -84,3 +84,9 @@ gem 'strong_password', '~> 0.0.5'
 
 #caching store
 gem 'dalli'
+
+#advanced caching
+gem 'redis-rails'
+
+#wget to install redis
+gem 'wget', '~> 1.0', '>= 1.0.15'

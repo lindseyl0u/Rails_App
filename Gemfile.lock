@@ -103,6 +103,8 @@ GEM
     pg (0.19.0)
     puma (3.7.0)
     rack (2.0.1)
+    rack-cache (1.6.1)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.1)
@@ -144,9 +146,14 @@ GEM
     redis-activesupport (5.0.1)
       activesupport (>= 3, < 6)
       redis-store (~> 1.2.0)
+    redis-namespace (1.5.3)
+      redis (~> 3.0, >= 3.0.4)
     redis-rack (2.0.1)
       rack (>= 2.0, < 3)
       redis-store (>= 1.2, < 1.4)
+    redis-rack-cache (2.0.0)
+      rack-cache (~> 1.6.0)
+      redis-store (~> 1.2.0.pre)
     redis-rails (5.0.1)
       redis-actionpack (~> 5.0.0)
       redis-activesupport (~> 5.0.0)
@@ -235,6 +242,9 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.1)
   rails-controller-testing
+  redis
+  redis-namespace
+  redis-rack-cache
   redis-rails
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
@@ -250,4 +260,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.6

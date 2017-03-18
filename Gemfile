@@ -86,4 +86,7 @@ gem 'strong_password', '~> 0.0.5'
 gem 'dalli'
 
 #advanced caching
+gem 'redis'
+gem 'redis-namespace'
 gem 'redis-rails'
+gem 'redis-rack-cache'

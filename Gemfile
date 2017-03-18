@@ -86,4 +86,4 @@ gem 'strong_password', '~> 0.0.5'
 gem 'dalli'
 
 #advanced caching
-gem 'redis-rails'
+gem 'redis-rails', '~> 4'

@@ -6,7 +6,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :orders
   has_many :comments
-
-  #Basic usage. Defaults to minimum entrophy of 18 and no dictionary checking
-  validates :password, password_strength: {min_entrophy: 1, use_dictionary: true}
 end

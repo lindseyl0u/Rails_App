@@ -1,5 +1,4 @@
 
-<% @products.each do |product| %>
   <div class="col-md-4">
     <% cache product do %>
     <%= image_tag(product.image_url, class:"img-responsive") %>
@@ -12,4 +11,3 @@
     <p><%= link_to 'Edit', edit_product_path(product),class:'btn btn-default btn-sm' %></p>
     <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default btn-sm' %></p>
   </div><!-- /col -->
-<% end %>
